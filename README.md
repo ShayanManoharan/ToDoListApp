@@ -23,12 +23,6 @@ A SwiftUI-based To Do List app that helps users stay organized and manage tasks 
 - `ViewModels/`: Business logic for Login, Register, Tasks, and New Task
 - `Views/`: Screens for login, registration, task list, and task creation
 
-## Screenshots
-
-| Task List View | Add New Task View |
-|----------------|-------------------|
-| ![Task View](screenshots/task_view.png) | ![Add View](screenshots/add_view.png) |
-
 ## Setup
 
 1. Clone the repo
