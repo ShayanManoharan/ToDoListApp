@@ -14,11 +14,11 @@ struct NewItemsView: View {
 
     var body: some View {
         VStack {
-            HeaderView()
+            HeaderView(title: "Add New Task", subtitle: "Plan ahead and stay on track", gradientColors: [Color.blue, Color.green])
             Form {
                 TextField("Title", text: $viewModel.title)
                 DatePicker("Due Date", selection: $viewModel.dueDate, displayedComponents: .date)
-                Button("Save") {
+                Button("Add to To Do List") {
                     viewModel.save(to: listViewModel) {
                         dismiss()
                     }

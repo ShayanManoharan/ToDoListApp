@@ -8,15 +8,19 @@
 import SwiftUI
 
 struct HeaderView: View {
+    var title: String
+    var subtitle: String
+    var gradientColors: [Color]
+
     var body: some View {
         ZStack {
-            LinearGradient(gradient: Gradient(colors: [.pink, .purple]), startPoint: .topLeading, endPoint: .bottomTrailing)
+            LinearGradient(gradient: Gradient(colors: gradientColors), startPoint: .topLeading, endPoint: .bottomTrailing)
                 .edgesIgnoringSafeArea(.top)
             VStack(spacing: 10) {
-                Text("To Do List")
+                Text(title)
                     .font(.system(size: 40, weight: .bold))
                     .foregroundColor(.white)
-                Text("Stay organized. Crush goals.")
+                Text(subtitle)
                     .font(.system(size: 20))
                     .foregroundColor(.white.opacity(0.8))
             }
@@ -24,8 +28,4 @@ struct HeaderView: View {
         }
         .frame(height: 200)
     }
-}
-
-#Preview {
-    HeaderView()
 }

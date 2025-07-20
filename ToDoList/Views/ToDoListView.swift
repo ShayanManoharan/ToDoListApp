@@ -11,7 +11,7 @@ struct ToDoListView: View {
     @ObservedObject var viewModel: ToDoListViewModel
     var body: some View {
         VStack {
-            HeaderView()
+            HeaderView(title: "To Do List", subtitle: "Stay organized. Crush goals.", gradientColors: [.pink, .purple])
             if viewModel.items.isEmpty {
                 Text("No tasks yet. Tap + to add.")
                     .foregroundColor(.gray)

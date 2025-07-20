@@ -11,7 +11,7 @@ struct LoginView: View {
     @StateObject var viewModel = LoginViewModel()
     var body: some View {
         VStack {
-            HeaderView()
+            HeaderView(title: "Welcome", subtitle: "Log in to manage your tasks", gradientColors: [.blue, .teal])
             Form {
                 TextField("Email", text: $viewModel.email).autocapitalization(.none)
                 SecureField("Password", text: $viewModel.password)

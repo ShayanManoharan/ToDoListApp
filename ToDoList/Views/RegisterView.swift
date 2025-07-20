@@ -11,7 +11,7 @@ struct RegisterView: View {
     @StateObject var viewModel = RegisterViewModel()
     var body: some View {
         VStack {
-            HeaderView()
+            HeaderView(title: "Join Us", subtitle: "Create your account", gradientColors: [.orange, .pink])
             Form {
                 TextField("Email", text: $viewModel.email).autocapitalization(.none)
                 SecureField("Password", text: $viewModel.password)
