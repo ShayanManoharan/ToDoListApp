@@ -10,26 +10,19 @@ import SwiftUI
 struct HeaderView: View {
     var body: some View {
         ZStack {
-            RoundedRectangle(cornerRadius:0)
-                .foregroundColor(Color.pink)
-                .rotationEffect(Angle(degrees: 15))
-                
-            
-            VStack {
+            LinearGradient(gradient: Gradient(colors: [.pink, .purple]), startPoint: .topLeading, endPoint: .bottomTrailing)
+                .edgesIgnoringSafeArea(.top)
+            VStack(spacing: 10) {
                 Text("To Do List")
-                    .font(.system(size: 50))
-                    .foregroundColor(Color.white)
-                    .bold()
-                
-                Text("Get things done")
-                    .font(.system(size: 30))
-                    .foregroundColor(Color.white)
+                    .font(.system(size: 40, weight: .bold))
+                    .foregroundColor(.white)
+                Text("Stay organized. Crush goals.")
+                    .font(.system(size: 20))
+                    .foregroundColor(.white.opacity(0.8))
             }
-            .padding(.top, 30)
+            .padding(.top, 50)
         }
-        .frame(width: UIScreen.main.bounds.width * 3,
-               height: 300)
-        .offset(y: -100)
+        .frame(height: 200)
     }
 }
 

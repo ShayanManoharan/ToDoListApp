@@ -8,11 +8,26 @@
 import SwiftUI
 
 struct NewItemsView: View {
+    @StateObject var viewModel = NewItemViewModel()
+    @Environment(\.dismiss) var dismiss
+    var listViewModel: ToDoListViewModel
+
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            HeaderView()
+            Form {
+                TextField("Title", text: $viewModel.title)
+                DatePicker("Due Date", selection: $viewModel.dueDate, displayedComponents: .date)
+                Button("Save") {
+                    viewModel.save(to: listViewModel) {
+                        dismiss()
+                    }
+                }
+                if !viewModel.errorMessage.isEmpty {
+                    Text(viewModel.errorMessage).foregroundColor(.red)
+                }
+            }
+        }
     }
 }
 
-#Preview {
-    NewItemsView()
-}
