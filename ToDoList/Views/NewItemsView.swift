@@ -18,7 +18,7 @@ struct NewItemsView: View {
             Form {
                 TextField("Title", text: $viewModel.title)
                 DatePicker("Due Date", selection: $viewModel.dueDate, displayedComponents: .date)
-                Button("Add to To Do List") {
+                Button("Add to your To Do List") {
                     viewModel.save(to: listViewModel) {
                         dismiss()
                     }
