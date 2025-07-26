@@ -14,7 +14,7 @@ struct NewItemsView: View {
 
     var body: some View {
         VStack {
-            HeaderView(title: "Add New Task", subtitle: "Plan ahead and stay on track", gradientColors: [Color.blue, Color.green])
+            HeaderView(title: "Add Task", subtitle: "Plan ahead and stay on track", gradientColors: [Color.blue, Color.green])
             Form {
                 TextField("Title", text: $viewModel.title)
                 DatePicker("Due Date", selection: $viewModel.dueDate, displayedComponents: .date)
